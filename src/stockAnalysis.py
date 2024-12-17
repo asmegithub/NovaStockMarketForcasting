@@ -290,3 +290,12 @@ class StockMarketAnalysis:
         plt.ylabel('Number of Articles')
         plt.xticks(rotation=45)
         plt.show()
+    def save_data(self,columns):
+        """
+        Save the processed data to a specified file path.
+
+        :param columns: str, list of column names to save the processed data.
+        """
+        self.data = self.data[columns]
+        self.data.to_csv('final_news_data.csv', index=False)
+        print("Processed data saved to 'final_news_data.csv'")
